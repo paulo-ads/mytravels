@@ -7,7 +7,7 @@ export const getPhotos = async (
 
   const fetchWithQuery = async (searchQuery: string) => {
     const query = encodeURIComponent(searchQuery);
-    const url = `https://api.unsplash.com/search/photos?client_id=${apiKey}&orientation=landscape&per_page=1&query=${query}`;
+    const url = `https://api.unsplash.com/search/photos?client_id=${apiKey}&orientation=landscape&per_page=3&query=${query}`;
 
     const response = await fetch(url);
     if (!response.ok) throw new Error(`Unsplash Error: ${response.status}`);

@@ -1,86 +1,35 @@
 export type CountryRawData = {
-  tld: string[];
-  cca2: string;
-  ccn3: string;
-  cca3: string;
-  cioc: string;
-  independent: boolean;
-  status: string;
-  unMember: boolean;
-  idd: {
-    root: string;
-    suffixes: string[];
-  };
-  capital: string[];
-  altSpellings: string[];
-  region: string;
-  subregion: string;
-  landlocked: boolean;
-  borders: string[];
-  area: number;
-  maps: {
-    googleMaps: string;
-    openStreetMaps: string;
-  };
-  population: number;
-  fifa: string;
-  car: {
-    signs: string[];
-    side: string;
-  };
-  timezones: string[];
-  continents: string[];
-  flag: string;
-  name: {
+  names: {
     common: string;
-    official: string;
-    nativeName: {
-      [key: string]: {
-        official: string;
-        common: string;
-      };
+  };
+  codes: {
+    alpha_2: string;
+  };
+  capitals: {
+    attributes: {
+      administrative: boolean;
+      constitutional: boolean;
+      executive: boolean;
+      judicial: boolean;
+      legislative: boolean;
+      primary: boolean;
     };
-  };
-  currencies: {
-    [key: string]: {
-      symbol: string;
-      name: string;
+    coordinates: {
+      lat: number;
+      lng: number;
     };
+    name: string;
+  }[];
+  flag: {
+    url_svg: string;
   };
-  languages: {
-    [key: string]: string;
-  };
-  latlng: number[];
-  demonyms: {
-    [key: string]: {
-      f: string;
-      m: string;
-    };
-  };
-  translations: {
-    [key: string]: {
-      official: string;
-      common: string;
-    };
-  };
-  gini: {
-    [year: string]: number;
-  };
-  flags: {
-    png: string;
-    svg: string;
-    alt: string;
-  };
-  coatOfArms: {
-    png: string;
-    svg: string;
-  };
-  startOfWeek: string;
-  capitalInfo: {
-    latlng: number[];
-  };
-  postalCode: {
-    format: string;
-    regex: string;
+  region: string;
+  population: number;
+  _match: {
+    path: string;
+    value: string;
+  }[];
+  _meta: {
+    lastUpdatedTimestamp: number;
   };
 };

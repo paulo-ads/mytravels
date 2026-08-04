@@ -16,10 +16,8 @@ import { parsePhoto } from '../parsers/unsplash.parser.js';
 import { parseWeather } from '../parsers/weather.parser.js';
 
 export const getGuide = async (countryCode: string): Promise<GuidePayload> => {
-  const [guideCountry, guideCities] = await Promise.all([
-    getCountry(countryCode),
-    getCities(countryCode),
-  ]);
+  const guideCountry = await getCountry(countryCode);
+  const guideCities = await getCities(guideCountry.countryCode);
 
   return parseGuidePayload(guideCities, guideCountry);
 };
