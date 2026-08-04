@@ -86,8 +86,8 @@ import { Travel } from '../../../../core/models/travel.model';
                   @for (trip of travelState.completedTravels(); track trip.id) {
                     <app-travel-card
                       [travel]="trip"
-                      (edit)="handleEdit(trip)"
-                      (delete)="handleDelete(trip.id)"
+                      (editTravel)="handleEdit(trip)"
+                      (deleteTravel)="handleDelete(trip.id)"
                     ></app-travel-card>
                   }
                 </div>
