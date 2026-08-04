@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@import "tailwindcss";
+@import "@ctrl/ngx-emoji-mart/picker";
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --bg-app: #f2eff5;
+  --bg-surface: #DCE0E8;
+  --bg-surface-hover: #cdd1d9;
+
+  --text-main: #070707;
+  --text-muted: #5c5f77;
+  --text-inverted: #DCE0E8;
+
+  --border-color: #bcc0cc;
+
+  --primary: #c294fa;
+  --secondary: #a4adfe;
+  --danger: #EE99A0;
+  --success: #8fc56c;
+
+  --bg-ocean: #c1d4ef;
+
+  --btn-text: #070707;
+
+  --shadow-txt: 0 1px 4px rgba(0, 0, 0, 0.2);
+
+  --map-opacity: 0.75;
+  --background-color: var(--secondary);
+
+}
+
+:root { input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #C6A0F6 inset;
+} }
+
+:root.dark {
+  --bg-app: #0b0b12;
+  --bg-surface: #181825;
+  --bg-surface-hover: #212130;
+
+  --text-main: #DCE0E8;
+  --text-muted: #8a8a9f;
+  --text-inverted: #070707;
+
+  --border-color: #2d2d3f;
+
+  --primary: #B7BDF8;
+  --secondary: #C6A0F6;
+  --danger: #EE99A0;
+  --success: #a6e3a1;
+
+  --btn-text: #070707;
+
+  --bg-ocean: #4577be;
+
+  --shadow-txt: none;
+
+  --map-opacity: 0.25;
+  --background-color: var(--primary);
+
+}
+
+:root.dark {
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #B7BDF8 inset;
+  }
+}
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-app-bg: var(--bg-app);
+  --color-surface: var(--bg-surface);
+  --color-surface-hover: var(--bg-surface-hover);
+
+  --color-txt-main: var(--text-main);
+  --color-txt-muted: var(--text-muted);
+  --color-txt-inv: var(--text-inverted);
+
+  --color-border-base: var(--border-color);
+
+  --color-brand: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-btn-text: var(--btn-text);
+
+  --color-bg-ocean: var(--bg-ocean);
+}
+
+html, body {
+  @apply h-full bg-app-bg text-txt-main font-sans transition-colors duration-300;
+}
+
+.cdk-drag-preview {
+  @apply bg-surface text-txt-main rounded-lg shadow-2xl border border-brand cursor-grabbing box-border p-4;
+}
+
+.cdk-drag-placeholder {
+  @apply opacity-0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drop-list-dragging .cdk-drag:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+.leaflet-pane { z-index: 10 !important; }
+.leaflet-top, .leaflet-bottom { z-index: 10 !important; }
+.leaflet-container {
+  background-color: var(--bg-ocean) !important;
+}
+
+.bg-world-map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  filter: blur(5em);
+  opacity: var(--map-opacity);
+  background-color: var(--background-color);
+
+  -webkit-mask-image: url('/world-map.svg');
+  mask-image: url('/world-map.svg');
+
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.text-txt-inv {
+  text-shadow: var(--shadow-txt);
+}
