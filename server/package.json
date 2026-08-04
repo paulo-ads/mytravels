@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx prisma generate && tsc && cp -r src/generated dist/src/generated",
+    "build": "npx prisma generate && tsc && cp -R src/generated dist/src/",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
