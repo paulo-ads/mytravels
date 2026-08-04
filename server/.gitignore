@@ -1,5 +1,19 @@
-node_modules
-# Keep environment variables out of version control
-.env
+node_modules/
+npm-debug.log
 
-/generated/prisma
+*.tsbuildinfo
+build/
+dist/
+
+.env
+.env.local
+.env.test
+
+/generated
+postgres_data/
+src/generated/
+
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db
