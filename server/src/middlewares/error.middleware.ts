@@ -1,4 +1,4 @@
-import type { Request, Response } from 'express';
+import type { NextFunction, Request, Response } from 'express';
 import { AppError } from '../utils/AppError.js';
 
 const errorHandler = (
@@ -6,9 +6,13 @@ const errorHandler = (
   err: any,
   req: Request,
   res: Response,
+  _next: NextFunction,
 ): void => {
   let error = { ...err };
   error.message = err.message;
+
+  // eslint-disable-next-line no-console
+  console.error('ERROR: ', err);
 
   if (err.code === 'P2002') {
     const message = err.message;
