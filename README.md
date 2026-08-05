@@ -4,6 +4,9 @@ myTravels is an **API-powered atlas and travel manager application**, built with
 
 Users can explore the world through an interactive map, discovering top destinations, real-time weather, and gorgeous photography. They can also create, view, edit, and delete personal travel plans that are saved securely on their account.
 
+### **[Try it out](https://mytravels-drab.vercel.app/)**
+
+
 ## Features
 #### Authentication: *Create an account and log in securely using JWT.*
 ![Auth](https://github.com/user-attachments/assets/9f1abc23-4022-4833-9cf0-758f5010f1e1)
