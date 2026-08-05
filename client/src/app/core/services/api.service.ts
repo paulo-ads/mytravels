@@ -10,7 +10,7 @@ import { Travel } from '../models/travel.model';
 })
 export class ApiService {
   private http = inject(HttpClient);
-  private apiUrl = 'https://mytravels.onrender.com';
+  private apiUrl = 'https://mytravels.onrender.com/api';
 
   signup(data: SignupPayload): Observable<User> {
     return this.http.post<User>(`${this.apiUrl}/auth/signup`, data);
